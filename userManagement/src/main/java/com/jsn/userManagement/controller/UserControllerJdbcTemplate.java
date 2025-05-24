@@ -1,7 +1,7 @@
 package com.jsn.userManagement.controller;
 
 import com.jsn.userManagement.model.AppUser;
-import com.jsn.userManagement.repository.UserRepositoryJdbc;
+import com.jsn.userManagement.repository.UserRepositoryJdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,13 +13,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/")
-public class UserControllerManual {
+public class UserControllerJdbcTemplate {
 
     @Autowired
-    UserRepositoryJdbc userRepositoryJdbc;
+    UserRepositoryJdbcTemplate userRepositoryJdbc;
 
     /// ////////////////////////////////// JDBC PART ///////////////////////////////
-    @GetMapping(path = "usersJdbc", produces = {"application/json"})
+    @GetMapping(path = "usersJdbcTemplate", produces = {"application/json"})
 //    @ResponseBody
     public List<AppUser> getUsersJdbc() {
         Optional<List<AppUser>> usersOpt = userRepositoryJdbc.findAllUser();

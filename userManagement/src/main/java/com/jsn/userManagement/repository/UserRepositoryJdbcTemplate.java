@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class UserRepositoryJdbc {
+public class UserRepositoryJdbcTemplate {
 
 
     private final NamedParameterJdbcTemplate jdbc;
 
-    public UserRepositoryJdbc(NamedParameterJdbcTemplate jdbc) {
+    public UserRepositoryJdbcTemplate(NamedParameterJdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
 
